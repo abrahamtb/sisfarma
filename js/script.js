@@ -21,3 +21,4 @@ searchInput.addEventListener('keyup', () => {
         alert('✅ Vitaminas disponibles');
     }
 });
+
