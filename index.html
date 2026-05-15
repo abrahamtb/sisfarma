@@ -42,41 +42,80 @@
             <!-- BOTÓN HAMBURGUESA -->
             <button class="navbar-toggler"
                     type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
+                    data-bs-target="#mobileMenu"
+                    data-bs-toggle="offcanvas">
 
                 <i class="fas fa-bars"></i>
 
             </button>
 
             <!-- MENÚ -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
 
-                <ul class="navbar-nav ms-auto">
+    <!-- HEADER -->
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Inicio</a>
-                    </li>
+    <div class="offcanvas-header">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nosotros">Nosotros</a>
-                    </li>
+        <h4 class="offcanvas-title">
+            Menú
+        </h4>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
-                    </li>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#productos">Productos</a>
-                    </li>
+    </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
+    <!-- BODY -->
 
-                </ul>
+    <div class="offcanvas-body">
 
-            </div>
+        <ul class="mobile-menu">
+
+            <li>
+                <a href="#inicio">
+                    <i class="fas fa-house"></i>
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="#nosotros">
+                    <i class="fas fa-users"></i>
+                    Nosotros
+                </a>
+            </li>
+
+            <li>
+                <a href="#servicios">
+                    <i class="fas fa-pills"></i>
+                    Servicios
+                </a>
+            </li>
+
+            <li>
+                <a href="productos.html">
+                    <i class="fas fa-capsules"></i>
+                    Productos
+                </a>
+            </li>
+
+            <li>
+                <a href="#contacto">
+                    <i class="fas fa-phone"></i>
+                    Contacto
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
 
         </div>
 
@@ -263,80 +302,7 @@
     </section>
 
 
-    <!-- PRODUCTOS -->
-    <section id="productos" class="section-padding">
-
-        <div class="container">
-
-            <div class="section-title text-center">
-
-                <h2>Productos Destacados</h2>
-
-            </div>
-
-            <div class="row g-4 mt-4">
-
-                <div class="col-md-3">
-
-                    <div class="product-card">
-
-                        <i class="fas fa-capsules"></i>
-
-                        <h5>Paracetamol</h5>
-
-                        <span class="available">Disponible</span>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3">
-
-                    <div class="product-card">
-
-                        <i class="fas fa-capsules"></i>
-
-                        <h5>Ibuprofeno</h5>
-
-                        <span class="available">Disponible</span>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3">
-
-                    <div class="product-card">
-
-                        <i class="fas fa-capsules"></i>
-
-                        <h5>Vitamina C</h5>
-
-                        <span class="available">Disponible</span>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-3">
-
-                    <div class="product-card">
-
-                        <i class="fas fa-capsules"></i>
-
-                        <h5>Alcohol Gel</h5>
-
-                        <span class="available">Disponible</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+   
 
 
     <!-- CONTACTO -->
@@ -426,20 +392,19 @@
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+<script>
 
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const menuLinks = document.querySelectorAll('.mobile-menu a');
+    const offcanvasElement = document.getElementById('mobileMenu');
 
-    navLinks.forEach(link => {
+    menuLinks.forEach(link => {
 
         link.addEventListener('click', () => {
 
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                toggle: false
-            });
+            const offcanvas =
+                bootstrap.Offcanvas.getInstance(offcanvasElement);
 
-            bsCollapse.hide();
+            offcanvas.hide();
 
         });
 
