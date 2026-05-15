@@ -74,9 +74,24 @@ body{
 /* HERO */
 
 .hero-section{
-    background: linear-gradient(135deg, #5B0E8B, #00B7B3);
+    background:
+    linear-gradient(
+        rgba(91, 14, 139, 0.75),
+        rgba(0, 183, 179, 0.75)
+    ),
+    url('../img/farmacia.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     color: white;
     padding-top: 120px;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
 }
 
 .hero-title{
