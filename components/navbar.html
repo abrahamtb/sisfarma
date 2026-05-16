@@ -7,28 +7,100 @@
 
             <img src="img/Logo.png" alt="SisFarma">
 
-            <span class="brand-text">SISFARMA</span>
+            <span class="brand-text">
+                SISFARMA
+            </span>
 
         </a>
 
+        <!-- MENU DESKTOP -->
+        <ul class="navbar-nav ms-auto d-none d-lg-flex">
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="index.html">
+
+                    Inicio
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="nosotros.html">
+
+                    Nosotros
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="servicios.html">
+
+                    Servicios
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="productos.html">
+
+                    Productos
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="index.html#contacto">
+
+                    Contacto
+
+                </a>
+
+            </li>
+
+        </ul>
+        <!-- BUSCADOR NAVBAR -->
+
+        <form class="search-navbar d-none d-lg-flex" onsubmit="buscarProducto(event)" role="search">
+
+            <input type="text" id="searchInput" placeholder="Busca tus productos" aria-label="Buscar productos">
+
+            <button type="submit" aria-label="Buscar producto">
+
+                <i class="fas fa-search"></i>
+
+            </button>
+
+        </form>
         <!-- BOTÓN HAMBURGUESA -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="Abrir menú">
 
             <i class="fas fa-bars"></i>
 
         </button>
 
         <!-- OFFCANVAS MENU -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
 
             <!-- HEADER -->
             <div class="offcanvas-header">
 
-                <h4 class="offcanvas-title">
+                <h4 class="offcanvas-title" id="mobileMenuLabel">
+
                     Menú
+
                 </h4>
 
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+
                 </button>
 
             </div>
@@ -36,41 +108,78 @@
             <!-- BODY -->
             <div class="offcanvas-body">
 
+                <form class="search-navbar search-navbar-mobile" onsubmit="buscarProducto(event)" role="search">
+
+                    <input type="text" id="searchInputMobile" placeholder="Busca tus productos" aria-label="Buscar productos">
+
+                    <button type="submit" aria-label="Buscar producto">
+
+                        <i class="fas fa-search"></i>
+
+                    </button>
+
+                </form>
+
                 <ul class="mobile-menu">
 
                     <li>
+
                         <a href="index.html">
+
                             <i class="fas fa-house"></i>
+
                             Inicio
+
                         </a>
+
                     </li>
 
                     <li>
+
                         <a href="nosotros.html">
+
                             <i class="fas fa-users"></i>
+
                             Nosotros
+
                         </a>
+
                     </li>
 
                     <li>
+
                         <a href="servicios.html">
+
                             <i class="fas fa-pills"></i>
+
                             Servicios
+
                         </a>
+
                     </li>
 
                     <li>
+
                         <a href="productos.html">
+
                             <i class="fas fa-capsules"></i>
+
                             Productos
+
                         </a>
+
                     </li>
 
                     <li>
+
                         <a href="index.html#contacto">
+
                             <i class="fas fa-phone"></i>
+
                             Contacto
+
                         </a>
+
                     </li>
 
                 </ul>

@@ -1,372 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SisFarma | Productos</title>
 
-    <title>SisFarma | Cuidamos de ti</title>
-
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/producto.css">
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
     <div id="navbar"></div>
 
-    <!-- MODAL CARRITO -->
     <div class="modal fade" id="carritoModal" tabindex="-1" aria-hidden="true">
-
         <div class="modal-dialog modal-dialog-end">
-
             <div class="modal-content">
-
-                <!-- HEADER -->
                 <div class="modal-header">
-
                     <h5 class="modal-title">
-
                         <i class="fas fa-cart-shopping"></i>
                         Carrito de Compras
-
                     </h5>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-                    </button>
-
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
-                <!-- BODY -->
                 <div class="modal-body">
-
-                    <ul id="lista-carrito" class="list-group mb-3">
-
-                    </ul>
+                    <ul id="lista-carrito" class="list-group mb-3"></ul>
 
                     <h4 class="text-end">
-
                         Total:
-                        <span class="text-primary">
-                            S/ <span id="total">0.00</span>
-                        </span>
-
+                        <span class="text-primary">S/ <span id="total">0.00</span></span>
                     </h4>
-
                 </div>
 
-                <!-- FOOTER -->
                 <div class="modal-footer">
-
-                    <button class="btn btn-danger" onclick="vaciarCarrito()">
-
-                        Vaciar carrito
-
-                    </button>
-
-                    <button class="btn btn-success" onclick="finalizarCompra()">
-
-                        Finalizar compra
-
-                    </button>
-
+                    <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button>
+                    <button class="btn btn-success" onclick="finalizarCompra()">Finalizar compra</button>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <section id="productos" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2>Productos Destacados</h2>
+                <p>Medicamentos y productos farmacéuticos disponibles para delivery.</p>
             </div>
 
-        </div>
+            <div class="categories" aria-label="Filtrar productos por categoría">
+                <button class="category-btn active" type="button" data-category="todos">Todos</button>
+                <button class="category-btn" type="button" data-category="medicamentos">Medicamentos</button>
+                <button class="category-btn" type="button" data-category="vitaminas">Vitaminas</button>
+                <button class="category-btn" type="button" data-category="dermocosmetica">Dermocosmética</button>
+                <button class="category-btn" type="button" data-category="ofertas">Ofertas</button>
+            </div>
 
-    </div>
-    <!-- PRODUCTOS -->
-    <section id="productos" class="section-padding">
-
-        <div class="container">
-
-            <div class="section-title text-center mb-5">
-
-                <h2>Productos Destacados</h2>
-
-                <!-- CARRITO -->
-                <!-- BOTON CARRITO -->
-                <button class="cart-button position-relative" data-bs-toggle="modal" data-bs-target="#carritoModal">
-
-                    <i class="fas fa-cart-shopping"></i>
-                    Carrito
-
-                    <span id="cart-count"
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-
-                        0
-
-                    </span>
-
-                </button>
-
+            <div class="search-box mb-5">
+                <i class="fas fa-search"></i>
+                <input type="text" id="buscador" placeholder="¿Qué medicamento buscas?">
             </div>
 
             <div class="row g-4 mt-4" id="productos-container">
-
-                <!-- PRODUCTO 1 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="medicamentos">
                     <div class="product-card">
-
                         <img src="img/parace.jpg" class="img-fluid mb-3" alt="Paracetamol">
-
                         <h5>Paracetamol</h5>
-
                         <p class="price">S/ 8.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Paracetamol', 8)">
-                            Agregar al carrito
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Paracetamol', 8)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 2 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="medicamentos">
                     <div class="product-card">
-
                         <img src="img/ibupro.jpg" class="img-fluid mb-3" alt="Ibuprofeno">
-
                         <h5>Ibuprofeno</h5>
-
                         <p class="price">S/ 12.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Ibuprofeno', 12)">
-                            Agregar al carrito
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Ibuprofeno', 12)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 3 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="vitaminas ofertas">
                     <div class="product-card">
-
                         <img src="img/vitac.jpg" class="img-fluid mb-3" alt="Vitamina C">
-
                         <h5>Vitamina C</h5>
-
                         <p class="price">S/ 15.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Vitamina C', 15)">
-                            Agregar al carrito
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Vitamina C', 15)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 4 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="dermocosmetica">
                     <div class="product-card">
-
                         <img src="img/gel.jpg" class="img-fluid mb-3" alt="Alcohol Gel">
-
                         <h5>Alcohol Gel</h5>
-
                         <p class="price">S/ 10.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Alcohol Gel', 10)">
-                            Agregar al carrito
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Alcohol Gel', 10)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 5 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="medicamentos">
                     <div class="product-card">
-
                         <img src="img/Termo.jpg" class="img-fluid mb-3" alt="Termómetro">
-
                         <h5>Termómetro</h5>
-
                         <p class="price">S/ 25.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Termómetro', 25)">
-                            Agregar al carrito
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Termómetro', 25)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 6 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="medicamentos ofertas">
                     <div class="product-card">
-
                         <img src="img/jarabe.jpg" class="img-fluid mb-3" alt="Jarabe">
-
                         <h5>Jarabe para Tos</h5>
-
                         <p class="price">S/ 18.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Jarabe para Tos', 18)">
-                            Agregar al carrito
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Jarabe para Tos', 18)">Agregar al carrito</button>
                     </div>
-
                 </div>
-                <!-- PRODUCTO 7 -->
-                <div class="col-md-3">
 
+                <div class="col-md-3" data-aos="zoom-in" data-category="vitaminas ofertas">
                     <div class="product-card">
-
                         <img src="img/redox.jpg" class="img-fluid mb-3" alt="Redoxon">
-
                         <h5>Vitamina C Redoxon</h5>
-
                         <p class="price">S/ 28.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Vitamina C Redoxon', 28)">
-
-                            Agregar al carrito
-
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Vitamina C Redoxon', 28)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 8 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="medicamentos">
                     <div class="product-card">
-
                         <img src="img/vivacpe.jpg" class="img-fluid mb-3" alt="Vick">
-
                         <h5>Vick VapoRub</h5>
-
                         <p class="price">S/ 18.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Vick VapoRub', 18)">
-
-                            Agregar al carrito
-
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Vick VapoRub', 18)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 9 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="dermocosmetica ofertas">
                     <div class="product-card">
-
                         <img src="img/masca.jpg" class="img-fluid mb-3" alt="Mascarillas">
-
                         <h5>Mascarillas KN95</h5>
-
                         <p class="price">S/ 12.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Mascarillas KN95', 12)">
-
-                            Agregar al carrito
-
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Mascarillas KN95', 12)">Agregar al carrito</button>
                     </div>
-
                 </div>
 
-                <!-- PRODUCTO 10 -->
-                <div class="col-md-3">
-
+                <div class="col-md-3" data-aos="zoom-in" data-category="medicamentos">
                     <div class="product-card">
-
                         <img src="img/natur.jpg" class="img-fluid mb-3" alt="Jarabe Natural">
-
                         <h5>Jarabe Natural</h5>
-
                         <p class="price">S/ 22.00</p>
-
-                        <button class="btn-cart" onclick="agregarCarrito('Jarabe Natural', 22)">
-
-                            Agregar al carrito
-
-                        </button>
-
+                        <button class="btn-cart" onclick="agregarCarrito('Jarabe Natural', 22)">Agregar al carrito</button>
                     </div>
-
                 </div>
-
             </div>
-
-
-
         </div>
-
     </section>
 
-    <!-- FOOTER -->
-    <div id="footer"></div>
-    <!-- WHATSAPP FLOTANTE -->
     <a href="https://wa.me/51987742986" class="whatsapp-float" target="_blank">
-
         <i class="fab fa-whatsapp"></i>
-
     </a>
 
+    <button class="cart-float" data-bs-toggle="modal" data-bs-target="#carritoModal">
+        <i class="fas fa-cart-shopping"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+    </button>
 
-    <!-- Bootstrap -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toastCarrito" class="toast align-items-center text-bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">Producto agregado al carrito</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-
-        async function loadComponents() {
-
-            const navbar = await fetch("components/navbar.html");
-            const navbarData = await navbar.text();
-
-            document.getElementById("navbar").innerHTML = navbarData;
-
-            const footer = await fetch("components/footer.html");
-            const footerData = await footer.text();
-
-            document.getElementById("footer").innerHTML = footerData;
-        }
-
-        loadComponents();
-
-    </script>
-    <script src="js/cel.js"></script>
-    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
     <script>
         AOS.init({
             duration: 1000,
             once: true
         });
     </script>
+    <script src="js/cel.js"></script>
     <script src="js/carrito.js"></script>
+    <script src="js/buscador.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 let carrito = [];
 let total = 0;
 
+// AGREGAR PRODUCTO
 function agregarCarrito(nombre, precio) {
   carrito.push({
     nombre,
@@ -10,11 +11,16 @@ function agregarCarrito(nombre, precio) {
   total += precio;
 
   actualizarCarrito();
+
+  mostrarToast();
 }
 
+// ACTUALIZAR CARRITO
 function actualizarCarrito() {
   const lista = document.getElementById("lista-carrito");
+
   const totalElemento = document.getElementById("total");
+
   const contador = document.getElementById("cart-count");
 
   lista.innerHTML = "";
@@ -22,22 +28,23 @@ function actualizarCarrito() {
   carrito.forEach((producto, index) => {
     const li = document.createElement("li");
 
-    li.classList.add(
-      "list-group-item",
-      "d-flex",
-      "justify-content-between",
-      "align-items-center",
-    );
+    li.classList.add("list-group-item", "cart-item");
 
     li.innerHTML = `
 
-            <div>
-                <strong>${producto.nombre}</strong>
-                <br>
-                S/ ${producto.precio}
+            <div class="cart-info">
+
+                <h6>
+                    ${producto.nombre}
+                </h6>
+
+                <p>
+                    S/ ${producto.precio.toFixed(2)}
+                </p>
+
             </div>
 
-            <button class="btn btn-sm btn-danger"
+            <button class="delete-btn"
                     onclick="eliminarProducto(${index})">
 
                 <i class="fas fa-trash"></i>
@@ -54,6 +61,7 @@ function actualizarCarrito() {
   contador.textContent = carrito.length;
 }
 
+// ELIMINAR PRODUCTO
 function eliminarProducto(index) {
   total -= carrito[index].precio;
 
@@ -62,6 +70,7 @@ function eliminarProducto(index) {
   actualizarCarrito();
 }
 
+// VACIAR CARRITO
 function vaciarCarrito() {
   carrito = [];
 
@@ -69,6 +78,8 @@ function vaciarCarrito() {
 
   actualizarCarrito();
 }
+
+// FINALIZAR COMPRA
 function finalizarCompra() {
   if (carrito.length === 0) {
     alert("Tu carrito está vacío");
@@ -79,14 +90,25 @@ function finalizarCompra() {
   let mensaje = "🛒 *PEDIDO SISFARMA* %0A%0A";
 
   carrito.forEach((producto) => {
-    mensaje += `✅ ${producto.nombre} - S/ ${producto.precio}%0A`;
+    mensaje += `✅ ${producto.nombre} - S/ ${producto.precio.toFixed(2)}%0A`;
   });
 
-  mensaje += `%0A💰 Total: S/ ${total.toFixed(2)}`;
+  mensaje += `%0A💰 *TOTAL:* S/ ${total.toFixed(2)}`;
+
+  mensaje += `%0A%0A📍 Delivery SisFarma`;
 
   const numero = "51987742986";
 
   const url = `https://wa.me/${numero}?text=${mensaje}`;
 
   window.open(url, "_blank");
+}
+
+// TOAST BONITO
+function mostrarToast() {
+  const toastElement = document.getElementById("toastCarrito");
+
+  const toast = new bootstrap.Toast(toastElement);
+
+  toast.show();
 }
