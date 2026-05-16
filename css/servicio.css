@@ -1,0 +1,90 @@
+/* ===== SERVICIOS ===== */
+
+.service-card{
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    height: 100%;
+
+}
+
+.service-card:hover{
+
+    transform: translateY(-10px);
+
+}
+
+/* IMAGEN */
+
+.service-img{
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+/* ICONO */
+
+.service-card i{
+
+    font-size: 40px;
+
+    color: var(--accent);
+
+    margin-bottom: 15px;
+
+}
+
+/* TÍTULO */
+
+.service-card h4{
+
+    font-weight: 600;
+
+    color: var(--primary);
+
+    margin-bottom: 15px;
+
+}
+
+/* TEXTO */
+
+.service-card p{
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .service-img{
+
+        height: 180px;
+
+    }
+
+}

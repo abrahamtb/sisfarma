@@ -1,15 +1,10 @@
-   const menuLinks = document.querySelectorAll('.mobile-menu a');
-    const offcanvasElement = document.getElementById('mobileMenu');
+const menuLinks = document.querySelectorAll(".mobile-menu a");
+const offcanvasElement = document.getElementById("mobileMenu");
 
-    menuLinks.forEach(link => {
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
 
-        link.addEventListener('click', () => {
-
-            const offcanvas =
-                bootstrap.Offcanvas.getInstance(offcanvasElement);
-
-            offcanvas.hide();
-
-        });
-
-    });
+    offcanvas.hide();
+  });
+});
