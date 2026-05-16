@@ -27,100 +27,7 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-
-        <div class="container">
-
-            <!-- LOGO -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
-
-                <img src="img/Logo.png" alt="SisFarma">
-
-                <span class="brand-text">SISFARMA</span>
-
-            </a>
-
-            <!-- BOTÓN HAMBURGUESA -->
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-target="#mobileMenu"
-                    data-bs-toggle="offcanvas">
-
-                <i class="fas fa-bars"></i>
-
-            </button>
-
-            <!-- MENÚ -->
-            
-<div class="offcanvas offcanvas-start"
-     tabindex="-1"
-     id="mobileMenu">
-
-    <!-- HEADER -->
-
-    <div class="offcanvas-header">
-
-        <h4 class="offcanvas-title">
-            Menú
-        </h4>
-
-        <button type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas">
-        </button>
-
-    </div>
-
-    <!-- BODY -->
-
-    <div class="offcanvas-body">
-
-        <ul class="mobile-menu">
-
-            <li>
-                <a href="index.html">
-                    <i class="fas fa-house"></i>
-                    Inicio
-                </a>
-            </li>
-
-            <li>
-                <a href="index.html #nosotros">
-                    <i class="fas fa-users"></i>
-                    Nosotros
-                </a>
-            </li>
-
-            <li>
-                <a href="index.html #servicios">
-                    <i class="fas fa-pills"></i>
-                    Servicios
-                </a>
-            </li>
-
-            <li>
-                <a href="productos.html">
-                    <i class="fas fa-capsules"></i>
-                    Productos
-                </a>
-            </li>
-
-            <li>
-                <a href="index.html #contacto">
-                    <i class="fas fa-phone"></i>
-                    Contacto
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</div>
-
-        </div>
-
-    </nav>
+<div id="navbar"></div>
 
   <!-- MODAL CARRITO -->
 <div class="modal fade"
@@ -203,7 +110,7 @@
 
             <!-- CARRITO -->
             <!-- BOTON CARRITO -->
-<button class="btn btn-primary position-relative"
+<button class="cart-button position-relative"
         data-bs-toggle="modal"
         data-bs-target="#carritoModal">
 
@@ -354,48 +261,112 @@
                 </div>
 
             </div>
+            <!-- PRODUCTO 7 -->
+<div class="col-md-3">
+
+    <div class="product-card">
+
+        <img src="img/redox.jpg"
+             class="img-fluid mb-3"
+             alt="Redoxon">
+
+        <h5>Vitamina C Redoxon</h5>
+
+        <p class="price">S/ 28.00</p>
+
+        <button class="btn-cart"
+                onclick="agregarCarrito('Vitamina C Redoxon', 28)">
+
+           Agregar al carrito
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCTO 8 -->
+<div class="col-md-3">
+
+    <div class="product-card">
+
+        <img src="img/vivacpe.jpg"
+             class="img-fluid mb-3"
+             alt="Vick">
+
+        <h5>Vick VapoRub</h5>
+
+        <p class="price">S/ 18.00</p>
+
+        <button class="btn-cart"
+                onclick="agregarCarrito('Vick VapoRub', 18)">
+
+            Agregar al carrito
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCTO 9 -->
+<div class="col-md-3">
+
+    <div class="product-card">
+
+        <img src="img/masca.jpg"
+             class="img-fluid mb-3"
+             alt="Mascarillas">
+
+        <h5>Mascarillas KN95</h5>
+
+        <p class="price">S/ 12.00</p>
+
+        <button class="btn-cart"
+                onclick="agregarCarrito('Mascarillas KN95', 12)">
+
+            Agregar al carrito
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PRODUCTO 10 -->
+<div class="col-md-3">
+
+    <div class="product-card">
+
+        <img src="img/natur.jpg"
+             class="img-fluid mb-3"
+             alt="Jarabe Natural">
+
+        <h5>Jarabe Natural</h5>
+
+        <p class="price">S/ 22.00</p>
+
+        <button class="btn-cart"
+                onclick="agregarCarrito('Jarabe Natural', 22)">
+
+            Agregar al carrito
+
+        </button>
+
+    </div>
+
+</div>
 
         </div>
 
-        <!-- LISTA DEL CARRITO -->
-        <div class="cart-container mt-5">
-
-            <h3>
-                <i class="fas fa-cart-shopping"></i>
-                Carrito de Compras
-            </h3>
-
-            <ul id="lista-carrito"></ul>
-
-            <h4 class="mt-3">
-                Total: S/
-                <span id="total">0.00</span>
-            </h4>
-
-        </div>
+       
 
     </div>
 
 </section>
 
      <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="container text-center">
-
-            <img src="img/Logo.png" width="80" alt="logo">
-
-            <h4>SisFarma</h4>
-
-            <p>Cuidamos de ti y tu salud.</p>
-
-            <p class="copy">
-                © 2026 SisFarma - Todos los derechos reservados.
-            </p>
-
-        </div>
-
-    </footer>
+   <div id="footer"></div>
         <!-- WHATSAPP FLOTANTE -->
     <a href="https://wa.me/51987742986"
        class="whatsapp-float"
@@ -410,25 +381,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+async function loadComponents(){
 
-    navLinks.forEach(link => {
+    const navbar = await fetch("components/navbar.html");
+    const navbarData = await navbar.text();
 
-        link.addEventListener('click', () => {
+    document.getElementById("navbar").innerHTML = navbarData;
 
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                toggle: false
-            });
+    const footer = await fetch("components/footer.html");
+    const footerData = await footer.text();
 
-            bsCollapse.hide();
+    document.getElementById("footer").innerHTML = footerData;
+}
 
-        });
+loadComponents();
 
-
-    });
-
-    </script>
+</script>
+<script src="js/cel.js"></script>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -438,112 +407,6 @@
             once: true
         });
     </script>
-   <script>
-
-let carrito = [];
-let total = 0;
-
-function agregarCarrito(nombre, precio){
-
-    carrito.push({
-        nombre,
-        precio
-    });
-
-    total += precio;
-
-    actualizarCarrito();
-}
-
-function actualizarCarrito(){
-
-    const lista = document.getElementById("lista-carrito");
-    const totalElemento = document.getElementById("total");
-    const contador = document.getElementById("cart-count");
-
-    lista.innerHTML = "";
-
-    carrito.forEach((producto, index) => {
-
-        const li = document.createElement("li");
-
-        li.classList.add(
-            "list-group-item",
-            "d-flex",
-            "justify-content-between",
-            "align-items-center"
-        );
-
-        li.innerHTML = `
-
-            <div>
-                <strong>${producto.nombre}</strong>
-                <br>
-                S/ ${producto.precio}
-            </div>
-
-            <button class="btn btn-sm btn-danger"
-                    onclick="eliminarProducto(${index})">
-
-                <i class="fas fa-trash"></i>
-
-            </button>
-
-        `;
-
-        lista.appendChild(li);
-
-    });
-
-    totalElemento.textContent = total.toFixed(2);
-
-    contador.textContent = carrito.length;
-}
-
-function eliminarProducto(index){
-
-    total -= carrito[index].precio;
-
-    carrito.splice(index, 1);
-
-    actualizarCarrito();
-}
-
-function vaciarCarrito(){
-
-    carrito = [];
-
-    total = 0;
-
-    actualizarCarrito();
-}
-function finalizarCompra(){
-
-    if(carrito.length === 0){
-
-        alert("Tu carrito está vacío");
-
-        return;
-    }
-
-    let mensaje = "🛒 *PEDIDO SISFARMA* %0A%0A";
-
-    carrito.forEach(producto => {
-
-        mensaje += `✅ ${producto.nombre} - S/ ${producto.precio}%0A`;
-
-    });
-
-    mensaje += `%0A💰 Total: S/ ${total.toFixed(2)}`;
-
-    const numero = "51987742986";
-
-    const url = `https://wa.me/${numero}?text=${mensaje}`;
-
-    window.open(url, "_blank");
-
-}
-
-</script>
+   <script src="js/carrito.js"></script>
 </body>
 </html>

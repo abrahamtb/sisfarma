@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SisFarma | Cuidamos de ti</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+<div id="navbar"></div>
+
+ <!-- SERVICIOS -->
+    <section id="servicios" class="services-section section-padding">
+
+        <div class="container">
+
+            <div class="section-title text-center" data-aos="fade-up">
+
+                <h2>Servicios</h2>
+
+                <p>
+                    Atención farmacéutica moderna y accesible.
+                </p>
+
+            </div>
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service-card">
+                        <i class="fas fa-file-prescription"></i>
+                        <h4>Validación de recetas</h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service-card">
+                        <i class="fas fa-pills"></i>
+                        <h4>Venta de medicamentos</h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service-card">
+                        <i class="fas fa-spa"></i>
+                        <h4>Dermo-cosmética</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+     <!-- FOOTER -->
+   <div id="footer"></div>
+        <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/51987742986"
+       class="whatsapp-float"
+       target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cel.js"></script>
+    <script>
+
+async function loadComponents(){
+
+    const navbar = await fetch("components/navbar.html");
+    const navbarData = await navbar.text();
+
+    document.getElementById("navbar").innerHTML = navbarData;
+
+    const footer = await fetch("components/footer.html");
+    const footerData = await footer.text();
+
+    document.getElementById("footer").innerHTML = footerData;
+}
+
+loadComponents();
+
+</script>
+     <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script> 
+</body>
+</html>

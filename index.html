@@ -26,137 +26,157 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-
-        <div class="container">
-
-            <!-- LOGO -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
-
-                <img src="img/Logo.png" alt="SisFarma">
-
-                <span class="brand-text">SISFARMA</span>
-
-            </a>
-
-            <!-- BOTÓN HAMBURGUESA -->
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-target="#mobileMenu"
-                    data-bs-toggle="offcanvas">
-
-                <i class="fas fa-bars"></i>
-
-            </button>
-
-            <!-- MENÚ -->
-            
-<div class="offcanvas offcanvas-start"
-     tabindex="-1"
-     id="mobileMenu">
-
-    <!-- HEADER -->
-
-    <div class="offcanvas-header">
-
-        <h4 class="offcanvas-title">
-            Menú
-        </h4>
-
-        <button type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas">
-        </button>
-
-    </div>
-
-    <!-- BODY -->
-
-    <div class="offcanvas-body">
-
-        <ul class="mobile-menu">
-
-            <li>
-                <a href="#inicio">
-                    <i class="fas fa-house"></i>
-                    Inicio
-                </a>
-            </li>
-
-            <li>
-                <a href="#nosotros">
-                    <i class="fas fa-users"></i>
-                    Nosotros
-                </a>
-            </li>
-
-            <li>
-                <a href="#servicios">
-                    <i class="fas fa-pills"></i>
-                    Servicios
-                </a>
-            </li>
-
-            <li>
-                <a href="productos.html">
-                    <i class="fas fa-capsules"></i>
-                    Productos
-                </a>
-            </li>
-
-            <li>
-                <a href="#contacto">
-                    <i class="fas fa-phone"></i>
-                    Contacto
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</div>
-
-        </div>
-
-    </nav>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
 
 
-    <!-- HERO -->
-    <section id="inicio" class="hero-section">
+    <!-- HERO / CAROUSEL -->
+    <section id="inicio">
 
-        <div class="container">
+        <div id="heroCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel"
+             data-bs-interval="3000">
 
-            <div class="row align-items-center min-vh-100">
+            <!-- INDICADORES -->
+            <div class="carousel-indicators">
 
-                <!-- TEXTO -->
-                <div class="col-lg-6" data-aos="fade-right">
+                <button type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide-to="0"
+                        class="active">
+                </button>
 
-                    <h1 class="hero-title">
-                        Cuidamos de ti y tu salud
-                    </h1>
+                <button type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide-to="1">
+                </button>
 
-                    <p class="hero-text">
-                        Medicamentos, orientación farmacéutica y delivery rápido en Juliaca.
-                    </p>
+                <button type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide-to="2">
+                </button>
 
-                    <div class="hero-buttons">
+                <button type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide-to="3">
+                </button>
 
-                        <a href="#servicios" class="btn btn-main">
-                            Ver servicios
-                        </a>
+                <button type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide-to="4">
+                </button>
 
-                        <a href="#contacto" class="btn btn-outline-custom">
-                            Contacto
-                        </a>
+            </div>
+
+            <!-- SLIDES -->
+            <div class="carousel-inner">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active">
+
+                    <img src="img/Logo.png"
+                         class="d-block w-100 carousel-img"
+                         alt="SisFarma">
+
+                    <div class="carousel-content">
+
+                        <h1>
+                            Tu salud en las mejores manos
+                        </h1>
+
+                        <p>
+                            Atención farmacéutica moderna y confiable.
+                        </p>
 
                     </div>
 
                 </div>
-                <!-- IMAGEN -->
-         
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-item">
+
+                    <img src="img/slider3.jpeg"
+                         class="d-block w-100 carousel-img"
+                         alt="Delivery">
+
+                    <div class="carousel-content">
+
+                        <h1>
+                            Delivery rápido y seguro
+                        </h1>
+
+                        <p>
+                            Recibe tus medicamentos en casa.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="carousel-item">
+
+                    <img src="img/slider2.jpg.jpeg"
+                         class="d-block w-100 carousel-img"
+                         alt="Atención">
+
+                    <div class="carousel-content">
+
+                        <h1>
+                            Atención personalizada 24 horas
+                        </h1>
+
+                        <p>
+                            Siempre cerca de ti.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="carousel-item">
+
+                    <img src="img/slider4.jpeg"
+                         class="d-block w-100 carousel-img"
+                         alt="Promociones">
+
+                    <div class="carousel-content">
+
+                        <h1>
+                            Promociones de temporada
+                        </h1>
+
+                        <p>
+                            Antigripales y vitaminas en oferta.
+                        </p>
+
+                    </div>
+
+                </div>
+
 
             </div>
+
+            <!-- CONTROLES -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
 
         </div>
 
@@ -168,14 +188,16 @@
 
         <div class="container">
 
-            <div class="location-card" data-aos="zoom-in">
+            <div class="location-card">
 
                 <i class="fas fa-location-dot"></i>
 
-                <h3>Frente al Hospital CARLOS MONJE MEDRANO</h3>
+                <h3>
+                    Frente al HOSPITAL CARLOS MONGE MEDRANO
+                </h3>
 
                 <p>
-                    Atención rápida y accesible para toda la comunidad.
+                    Atención rápida, moderna y confiable.
                 </p>
 
             </div>
@@ -185,70 +207,88 @@
     </section>
 
 
-    <!-- NOSOTROS -->
-    <section id="nosotros" class="section-padding">
+  
+
+
+    <!-- SERVICIOS PREVIEW -->
+    <section class="section-padding bg-light">
 
         <div class="container">
 
-            <div class="section-title text-center" data-aos="fade-up">
+            <div class="section-title text-center">
 
-                <h2>Nosotros</h2>
+                <h2>Nuestros Servicios</h2>
 
                 <p>
-                    Comprometidos con la salud y bienestar de nuestros pacientes.
+                    Atención moderna y especializada para nuestros clientes.
                 </p>
 
             </div>
 
             <div class="row g-4 mt-4">
 
-                <div class="col-md-4" data-aos="fade-up">
+                <!-- SERVICIO -->
+                <div class="col-md-4">
 
-                    <div class="info-card">
+                    <div class="service-preview-card">
 
-                        <i class="fas fa-heart"></i>
+                        <img src="img/service1.jpg"
+                             class="img-fluid"
+                             alt="Medicamentos">
 
-                        <h4>Misión</h4>
-
-                        <p>
-                            Brindar medicamentos seguros y orientación farmacéutica responsable.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="info-card">
-
-                        <i class="fas fa-eye"></i>
-
-                        <h4>Visión</h4>
-
-                        <p>
-                            Ser una farmacia reconocida por su atención humana y profesional.
-                        </p>
+                        <h4>
+                            Venta de medicamentos
+                        </h4>
 
                     </div>
 
                 </div>
 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <!-- SERVICIO -->
+                <div class="col-md-4">
 
-                    <div class="info-card">
+                    <div class="service-preview-card">
 
-                        <i class="fas fa-handshake"></i>
+                        <img src="img/service2.jpg"
+                             class="img-fluid"
+                             alt="Dermo">
 
-                        <h4>Valores</h4>
-
-                        <p>
-                            Salud, Integridad y Servicio.
-                        </p>
+                        <h4>
+                            Dermo-cosmética
+                        </h4>
 
                     </div>
 
                 </div>
+
+                <!-- SERVICIO -->
+                <div class="col-md-4">
+
+                    <div class="service-preview-card">
+
+                        <img src="img/service3.jpg"
+                             class="img-fluid"
+                             alt="Recetas">
+
+                        <h4>
+                            Validación de recetas
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BOTÓN -->
+            <div class="text-center mt-5">
+
+                <a href="servicios.html"
+                   class="btn btn-main">
+
+                    Ver todos los servicios
+
+                </a>
 
             </div>
 
@@ -257,56 +297,121 @@
     </section>
 
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="services-section section-padding">
+    <!-- PRODUCTOS PREVIEW -->
+    <section class="section-padding">
 
         <div class="container">
 
-            <div class="section-title text-center" data-aos="fade-up">
+            <div class="section-title text-center">
 
-                <h2>Servicios</h2>
+                <h2>Productos Destacados</h2>
 
                 <p>
-                    Atención farmacéutica moderna y accesible.
+                    Descubre algunos de nuestros productos más solicitados.
                 </p>
 
             </div>
 
             <div class="row g-4 mt-4">
 
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="fas fa-file-prescription"></i>
-                        <h4>Validación de recetas</h4>
+                <!-- PRODUCTO -->
+                <div class="col-md-3">
+
+                    <div class="product-card">
+
+                        <img src="img/parace.jpg"
+                             class="img-fluid mb-3"
+                             alt="Paracetamol">
+
+                        <h5>Paracetamol</h5>
+
+                        <p class="price">
+                            S/ 8.00
+                        </p>
+
                     </div>
+
                 </div>
 
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="fas fa-pills"></i>
-                        <h4>Venta de medicamentos</h4>
+                <!-- PRODUCTO -->
+                <div class="col-md-3">
+
+                    <div class="product-card">
+
+                        <img src="img/redox.jpg"
+                             class="img-fluid mb-3"
+                             alt="Redoxon">
+
+                        <h5>Vitamina C Redoxon</h5>
+
+                        <p class="price">
+                            S/ 28.00
+                        </p>
+
                     </div>
+
                 </div>
 
-                <div class="col-md-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="fas fa-spa"></i>
-                        <h4>Dermo-cosmética</h4>
+                <!-- PRODUCTO -->
+                <div class="col-md-3">
+
+                    <div class="product-card">
+
+                        <img src="img/vivacpe.jpg"
+                             class="img-fluid mb-3"
+                             alt="Vick">
+
+                        <h5>Vick VapoRub</h5>
+
+                        <p class="price">
+                            S/ 18.00
+                        </p>
+
                     </div>
+
                 </div>
+
+                <!-- PRODUCTO -->
+                <div class="col-md-3">
+
+                    <div class="product-card">
+
+                        <img src="img/masca.jpg"
+                             class="img-fluid mb-3"
+                             alt="Mascarillas">
+
+                        <h5>Mascarillas KN95</h5>
+
+                        <p class="price">
+                            S/ 12.00
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BOTÓN -->
+            <div class="text-center mt-5">
+
+                <a href="productos.html"
+                   class="btn btn-main">
+
+                    Ver catálogo completo
+
+                </a>
 
             </div>
 
         </div>
 
     </section>
-
-
-   
 
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section-padding">
+    <section id="contacto"
+             class="section-padding bg-light">
 
         <div class="container">
 
@@ -318,6 +423,7 @@
 
             <div class="row align-items-center mt-5">
 
+                <!-- INFO -->
                 <div class="col-lg-5">
 
                     <div class="contact-info">
@@ -325,32 +431,35 @@
                         <h4>Contáctanos</h4>
 
                         <p>
+
                             <i class="fas fa-phone"></i>
                             +51 987 742 986
+
                         </p>
 
                         <p>
+
                             <i class="fas fa-location-dot"></i>
-                            Frente al Hospital CARLOS MONJE MEDRANO
+                            Frente al HOSPITAL CARLOS MONGE MEDRANO
+
                         </p>
 
                     </div>
 
                 </div>
 
+                <!-- MAPA -->
                 <div class="col-lg-7">
-                    <h4 class="mb-3">
-                         Encuéntranos aquí 📍
-                    </h4>
+
                     <iframe
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d339.85820556098327!2d-70.12104756686041!3d-15.481383717790623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9167f364a1c1d749%3A0x8acdf41c32f2189b!2sEdificio%20Juliaca!5e0!3m2!1ses!2spe!4v1778803707307!5m2!1ses!2spe"
-                         width="100%"
-                         height="350"
-                         style="border:0; border-radius:20px;"
-                         allowfullscreen=""
-                         loading="lazy"
-                         referrerpolicy="no-referrer-when-downgrade">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d339.85820556098327!2d-70.12104756686041!3d-15.481383717790623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9167f364a1c1d749%3A0x8acdf41c32f2189b!2sEdificio%20Juliaca!5e0!3m2!1ses!2spe!4v1778803707307!5m2!1ses!2spe"
+                        width="100%"
+                        height="350"
+                        style="border:0; border-radius:20px;"
+                        allowfullscreen=""
+                        loading="lazy">
                     </iframe>
+
                 </div>
 
             </div>
@@ -360,24 +469,9 @@
     </section>
 
 
+
     <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="container text-center">
-
-            <img src="img/Logo.png" width="80" alt="logo">
-
-            <h4>SisFarma</h4>
-
-            <p>Cuidamos de ti y tu salud.</p>
-
-            <p class="copy">
-                © 2026 SisFarma - Todos los derechos reservados.
-            </p>
-
-        </div>
-
-    </footer>
+   <div id="footer"></div>
 
 
     <!-- WHATSAPP FLOTANTE -->
@@ -392,25 +486,25 @@
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
+ <script>
 
-    const menuLinks = document.querySelectorAll('.mobile-menu a');
-    const offcanvasElement = document.getElementById('mobileMenu');
+async function loadComponents(){
 
-    menuLinks.forEach(link => {
+    const navbar = await fetch("components/navbar.html");
+    const navbarData = await navbar.text();
 
-        link.addEventListener('click', () => {
+    document.getElementById("navbar").innerHTML = navbarData;
 
-            const offcanvas =
-                bootstrap.Offcanvas.getInstance(offcanvasElement);
+    const footer = await fetch("components/footer.html");
+    const footerData = await footer.text();
 
-            offcanvas.hide();
+    document.getElementById("footer").innerHTML = footerData;
+}
 
-        });
+loadComponents();
 
-    });
-
-</script>
+</script>   
+<script src="js/cel.js"></script>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
