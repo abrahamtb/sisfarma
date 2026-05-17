@@ -52,6 +52,57 @@ function setupMobileMenu() {
   });
 }
 
+function setupScrollVideoAutoplay() {
+  const promoVideo = document.querySelector(".promo-video");
+
+  if (!promoVideo || typeof IntersectionObserver === "undefined") {
+    return;
+  }
+
+  let hasScrolledDown = window.scrollY > 120;
+  let hasPlayedOnce = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 120) {
+        hasScrolledDown = true;
+      }
+    },
+    { passive: true }
+  );
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry) {
+        return;
+      }
+
+      const shouldAutoplay =
+        entry.isIntersecting && entry.intersectionRatio >= 0.6 && hasScrolledDown;
+
+      if (shouldAutoplay && (promoVideo.paused || promoVideo.ended)) {
+        promoVideo
+          .play()
+          .then(() => {
+            hasPlayedOnce = true;
+          })
+          .catch(() => {});
+        return;
+      }
+
+      if (!entry.isIntersecting && hasPlayedOnce && !promoVideo.paused) {
+        promoVideo.pause();
+      }
+    },
+    {
+      threshold: [0.25, 0.6, 0.85],
+    }
+  );
+
+  observer.observe(promoVideo);
+}
+
 function highlightCurrentLink() {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const currentHash = window.location.hash;
@@ -125,5 +176,6 @@ window.addEventListener("load", hideLoader);
 document.addEventListener("DOMContentLoaded", () => {
   setupScrollTopButton();
   setupMobileMenu();
+  setupScrollVideoAutoplay();
   loadLayoutComponents();
 });
